@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>PelisMania</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+        <link href="{% static 'css/style2.css' %}" rel="stylesheet" />
+        <link href="{% static 'css/footer.css' %}" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        {% include 'nav.html' %}
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container position-relative">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6">
+                        <div class="text-center text-white">
+                            <!-- Page heading-->
+                            <h1 class="mb-5">
+                                {% if request.path == '/' %}
+                                    {% if 'inicio' in request.path %}
+                                        Inicio
+                                    {% endif %}
+                                {% elif 'pelicula' in request.path %}
+                                    Peliculas
+                                {% elif 'serie' in request.path %}
+                                    Series
+                                {% elif 'productora' in request.path %}
+                                    Productoras
+                                {% endif %}
+                            </h1>
+                                <div class="d-none" id="submitSuccessMessage">
+                                    <div class="text-center mb-3">
+                                        <div class="fw-bolder">Form submission successful!</div>
+                                        <p>To activate this form, sign up at</p>
+                                        <a class="text-white" href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                    </div>
+                                </div>
+                                <!-- Submit error message-->
+                                <!---->
+                                <!-- This is what your users will see when there is-->
+                                <!-- an error submitting the form-->
+                                <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section>
+                <h2>Descubre Tu Proxima Plataforma De Streaming Favorita!</h2>
+                <div class="content-all">
+                    <div class="content-carrousel">
+                        <figure><a href="https://www.disneyplus.com" target="_blank"><img src="https://www.muylinux.com/wp-content/uploads/2019/12/Disney-Plus-1024x576.jpg"></a></figure>
+                        <figure><a href="https://www.netflix.com" target="_blank"><img src="https://phantom-elmundo.unidadeditorial.es/6d2ab9c4c21765712a57f5dbd000a878/crop/130x0/1855x1150/resize/414/f/jpg/assets/multimedia/imagenes/2020/06/24/15930194372255.jpg"></a></figure>
+                        <figure><a href="https://www.starplus.com" target="_blank"><img src="https://static-assets.bamgrid.com/product/starplus/images/share-default.d72cf588f6d06cba22171f5ae44289d3.png"></a></figure>
+                        <figure><a href="https://www.hbomax.com/cl/es" target="_blank"><img src="https://static3.pisapapeles.net/uploads/2021/06/hbo-max-11.jpeg"></a></figure>
+                        <figure><a href="https://www.primevideo.com/" target="_blank"><img src="https://www.muycomputer.com/wp-content/uploads/2020/07/AmazonPrimeVideo.png"></a></figure>
+                        <figure><a href="https://www.paramountplus.com/cl/" target="_blank"><img src="https://www.losandes.com.ar/resizer/wVjsSAOk8JqMbEth02d8J8AAQ8w=/980x640/smart/filters:quality(75):format(webp)/cloudfront-us-east-1.images.arcpublishing.com/grupoclarin/WPVKCPQ2QJHMXP7N45XDHSPJAA.jpg"></a></figure>
+                        <figure><a href="https://vix.com/es-es/ondemand" target="_blank"><img src="https://www.futboltotal.com.mx/wp-content/uploads/2022/07/vix-plus-que-es-cuanto-cuesta-y-como-puedes-tenerlo-gratis.jpg"></a></figure>
+                        <figure><a href="https://www.hulu.com/" target="_blank"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhVhIIBPur7keDSaDYSH4kyhkwS3xpV3BwzyzrMsh_JN3gBrOkLcWZJLcY5K8iHf9UcjrOt4EHKXpe2zdULHPcpnJ8YWhWTsjnlW9V_WX1ZdcKsSzsn7R3QNWOniUNLsEz2DAi29gFCc18cH5HQlc-53HHGkwD-f9fjYQsGpnGZX4VTeaClHwPVAhPiM4k/w640-h360/huluportada.png"></a></figure>
+                        <figure><a href="https://www.filmin.es/suscribete" target="_blank"><img src="https://www.lavanguardia.com/andro4all/hero/2023/04/filmin-foto-portada.png?width=768&aspect_ratio=16:9&format=nowebp"></a></figure>
+                        <figure><a href="https://www.apple.com/cl/apple-tv-plus/" target="_blank"><img src="https://www.muycomputer.com/wp-content/uploads/2020/10/AppleTVPlus.portada.jpg"></a></figure>
+                    </div>
+                </div>
+                </section>
+        </header>
+
+        {% block contenido %}
+        
+        {% endblock contenido %}
+        <!-- Footer-->
+        <footer class="footer">
+
+            <div class="container">
+    
+                <div class="footer-row">
+    
+                    <div class="footer-links">
+                        
+                        <h4>Sobre El Desarrollador</h4>
+                        <ul>
+                            <li><a href="{% url 'AboutSergio' %}">Acerca De Sergio</a></li>
+                            <li><a href="{% url 'AboutMaikol' %}">Acerca De Maikol</a></li>
+                        </ul>
+                    
+                    </div>
+    
+                    <div class="footer-links">
+                        
+                        <h4>Sobre La Pagina</h4>
+                        <ul>
+                            <li><a href="{% url 'AboutPage' %}">Acerca De</a></li>
+                        </ul>
+                    
+                    </div>
+    
+                    <div class="footer-links">
+                        
+                        <h4>Nuestros Catalogos</h4>
+                        <ul>
+                            <li><a href="{% url 'catalogopeliculas' %}">Peliculas</a></li>
+                            <li><a href="{% url 'catalogoseries' %}">Series</a></li>
+                            <li><a href="{% url 'catalogoproductoras' %}">Productoras</a></li>
+                        </ul>
+                    
+                    </div>
+    
+                    <div class="footer-links">
+                        
+                        <h4>Siguenos En</h4>
+                        <div class="social-links">
+                            <a href="{% url 'Error404' %}"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="{% url 'Error404' %}"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="{% url 'Error404' %}"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+    
+                </div>
+            
+            </div>
+        
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/scripts.js"></script>
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>

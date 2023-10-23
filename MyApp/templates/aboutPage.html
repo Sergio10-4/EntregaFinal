@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    {% load static %}
+    <link href="{% static 'css/aboutme.css' %}" rel="stylesheet" />
+</head>
+<body>
+    <style>
+        body {
+            background-image: url('https://www.atrapalo.com/houdinis/wp-content/uploads/2022/01/sala-de-teatro-referencial-760x500.jpg');
+            background-size: cover;
+        }
+    </style>
+    <section class="box" style="width: 500px;">
+        <img src="https://cdns-images.dzcdn.net/images/talk/47e6c7082e45d67f126b84d929725bca/1000x1000.jpg" width="180" alt="" class="box-img">
+        <h1>Cinemania</h1>
+        <h2>Opina Libremente!</h2>
+        <br><br><br>
+        <p>¡Hola! Esta Pagina es para que cualquiera que quiera opinar & calificar libremente una pelicula o serie, ademas de interactuar con otros usuarios en linea.            
+            <br><br><br>
+            Compartir Reseñas de Películas
+            <br>
+            Podras Enviar Reseñas de Peliculas, Series y Productoras en el sitio oficial de imdb por medio de un enlace de redireccionamiento.
+            <br><br><br>
+            Crecer Juntos & Cooperativamente
+            <br>
+            Podras dar a conocer tanto tus opiniones como conocer la de otras personas que al igual que tu disfrutan de cada estreno en el cine.
+            <br><br>
+            <br><br>
+            ¡Espero que disfrutes tu instancia en nuestra pagina, espero ver pronto tus reseñas!
+            <br><br><br>
+            ¡Contactame Por Estos Medios Para Obtener Mas Prioridad Del Contenido Que Subas!
+
+        </p>
+        <ul>
+            <li><a href="{% url 'Error404' %}"><i class="fa-brands fa-github"></i></a></li>
+            <li><a href="{% url 'Error404' %}"><i class="fa-brands fa-linkedin"></i></a></li>
+            <li><a href="{% url 'Error404' %}"><i class="fa-brands fa-telegram"></i></a></li>
+        </ul>
+        <br><br><br>
+    </section>
+</body>
+</html>
+

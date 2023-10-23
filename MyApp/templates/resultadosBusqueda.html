@@ -1,0 +1,118 @@
+{% block contenido %}
+    <head>
+        <meta charset="UTF-8">
+        <title>Resultados Peliculas</title>
+        {% load static %}
+        <link href="{% static 'css/resultados.css' %}" rel="stylesheet" />
+        <link href="{% static 'css/nav.css' %}" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script>
+            function submitForm() {
+                document.getElementsByClassName('search')[0].submit();
+            }
+        </script>
+    </head>
+    {% include 'busquedaPeliculas.html' %}
+    <section class="main">
+        <header>
+            <section>
+                <div>
+                    <nav class="navbar navbar-light bg-light static-top">
+                        <div class="container">
+                            <a class="navbar-brand" href="{% url 'catalogopeliculas' %}">Volver Al Catalogo</a>
+                        </div>
+                    </nav>
+                </div>
+            </section>
+            <div class="results">
+                <h3>Lista De Peliculas Encontradas</h3>
+                <br>
+                <p>Aqui Apareceran Los Resultados De Tu Busqueda</p>
+            </div>
+        </header>
+        <body>
+            <style>
+
+                section div .navbar.navbar-light.bg-light.static-top .container .navbar-brand {
+                    position: absolute;
+                    left: 5%;
+                    top: 5%;
+                }
+
+
+                .grid-container {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-gap: 20px;
+                }
+
+                .left {
+                    position: absolute;
+                    left: 20%;
+                    top: 20%;
+                }
+
+                .right {
+                    position: absolute;
+                    right: 20%;
+                    top: 20%;
+                }
+
+                .card.left {
+                    position: absolute;
+                    left: 20%;
+                    top: 20%;
+                }
+
+                .card.right {
+                    position: absolute;
+                    right: 20%;
+                    top: 20%;
+                }
+
+                body .main .results {
+                    position: absolute;
+                    left: 20%;
+                    top: 5%;
+                    color: white;
+                }
+
+            </style>
+            {% if peliculas %}
+            <div class="grid-container">
+                {% for pelicula in peliculas %}
+                <a href="{{ pelicula.valoracion }}" target="_blank">
+                    <div class="card {% cycle 'left' 'right' %}" src="{{ pelicula.valoracion }}">
+                        <div class="poster">
+                            <img src="{{ pelicula.portada.url }}" alt="{{ pelicula.nombre }}">
+                        </div>
+                        <div class="details">
+                            <h3>{{ pelicula.nombre }}</h3>
+                            <br>
+                            <h3> Directed by: {{ pelicula.director.nombre }}</h3>
+                            <br>
+                            <div class="rating">
+                                <i class="fa-solid fa-star" style="color: yellow;"></i>
+                                <span>{{ pelicula.rating }}/5</span>
+                            </div>
+                            <br>
+                            <div class="tags">
+                                {% for genero in generos %}
+                                    <span>{{ genero.nombre }}</span>
+                                {% endfor %}
+                            </div>
+                            <br>
+                            <div class="info">
+                                <p>{{ pelicula.descripcion }}</p>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p style="color: red;">No se encontraron resultados para "{{ query }}"</p>
+        {% endif %}
+        </body>
+{% endblock contenido %}

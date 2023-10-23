@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogo De Series</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    {% load static %}
+    <link href="{% static 'css/serieCatalogos.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/nav.css' %}" rel="stylesheet" />
+</head>
+{% include 'busquedaSeries.html' %}
+<body>
+    <section>
+        <div>
+            <nav class="navbar navbar-light bg-light static-top">
+                <div class="container">
+                    <a class="navbar-brand" href="{% url 'main' %}">Home</a>
+                    {% if request.user.is_authenticated %}
+                        <a class="btn btn-primary" href="{% url 'perfil' %}">Perfil</a>
+                    {% else %}
+                        <a class="btn btn-primary" href="#">Registrate</a>
+                    {% endif %}
+                </div>
+            </nav>
+        </div>
+    </section>
+
+    <style>
+
+        section div .navbar.navbar-light.bg-light.static-top .container .navbar-brand {
+            position: absolute;
+            left: 10%;
+        }
+
+        section div .navbar.navbar-light.bg-light.static-top .container .btn.btn-primary{
+            position: absolute;
+            right: 10%;
+            color: white;
+            background-color: black;
+        }
+
+        .card {
+            height: 265px;
+        }
+
+        .card .poster {
+            height: 100%;
+            opacity: 50%;
+        }
+
+        .card .details {
+            height: 105%;
+        }
+
+        .card .details .rating span {
+            color: yellow
+        }
+
+    </style>
+    
+    <!-- Pelicula 1-->
+    <a href="https://www.imdb.com/title/tt0903747/?ref_=nv_sr_srsg_3_tt_3_nm_5_q_Brea" target="_blank">
+        <div class="card" id="serie1">
+            <div class="poster">
+                <img src="{% static 'Caratulas/BreakingBad.jpg' %}"/>
+            </div>
+            <div class="details">
+                <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ecd51263-bb0f-4465-af86-f7ed25e58e70/degmcke-c0607fde-c054-4415-a82f-40976ea8ca1c.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2VjZDUxMjYzLWJiMGYtNDQ2NS1hZjg2LWY3ZWQyNWU1OGU3MFwvZGVnbWNrZS1jMDYwN2ZkZS1jMDU0LTQ0MTUtYTgyZi00MDk3NmVhOGNhMWMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.gzVmoiOcUFRITyCnAGI0N1IwUpPskykB02LRmBsC2yE" class="logo"/>
+                <h3>Directed By Vince Gilligan</h3><br>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <span>3/5</span>
+                </div>
+                <br>
+                <div class="tags">
+                    <span>Accion</span>
+                    <span>Drama</span>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Pelicula 2-->
+    <a href="https://www.imdb.com/title/tt6315640/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_Atypi" target="_blank">
+        <div class="card" id="serie2">
+            <div class="poster">
+                <img src="{% static 'Caratulas/Atypical.jpg' %}"/>
+            </div>
+            <div class="details">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Atypical.png" class="logo"/>
+                <br><br><h3>Directed By Seth Gordon</h3><br><br>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <span>2/5</span>
+                </div>
+                <br>
+                <div class="tags">
+                    <span>Comedia</span>
+                    <span>Drama</span>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Pelicula 3-->
+    <a href="https://www.imdb.com/title/tt7221388/?ref_=nv_sr_srsg_0_tt_4_nm_4_q_Cobra%2520" target="_blank">
+        <div class="card" id="serie3">
+            <div class="poster">
+                <img src="{% static 'Caratulas/CobraKai.jpg' %}"/>
+            </div>
+            <div class="details">
+                <img src="https://1000marcas.net/wp-content/uploads/2021/07/Cobra-Kai-logo.png" class="logo"/>
+                <h3>Directed By Josh Heald</h3><br><br>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <span>3/5</span>
+                </div>
+                <br>
+                <div class="tags">
+                    <span>Action</span>
+                    <span>Drama</span>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Pelicula 4-->
+    <a href="https://www.imdb.com/title/tt5753856/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_dark" target="_blank">
+        <div class="card" id="serie4">
+            <div class="poster">
+                <img src="{% static 'Caratulas/Dark.jpg' %}"/>
+            </div>
+            <div class="details">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Dark_logo.png" class="logo"/>
+                <br><br><h3>Directed By Baran Bo Odar</h3><br><br>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <span>4/5</span>
+                </div>
+                <br>
+                <div class="tags">
+                    <span>Misterio</span>
+                    <span>Sci-Fi</span>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Pelicula 5-->
+    <a href="https://www.imdb.com/title/tt8772296/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_eupho" target="_blank">
+        <div class="card" id="serie5">
+            <div class="poster">
+                <img src="{% static 'Caratulas/Euphoria.jpg' %}"/>
+            </div>
+            <div class="details">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Euphoria_titlecard_logo.svg/2560px-Euphoria_titlecard_logo.svg.png" class="logo"/>
+                <br><br><h3>Directed By Sam Levinson</h3><br><br>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <span>3/5</span>
+                </div>
+                <br>
+                <div class="tags">
+                    <span>Drama</span>
+                    <span>Juvenil</span>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Pelicula 6-->
+    <a href="https://www.imdb.com/title/tt8740790/?ref_=nv_sr_srsg_0_tt_7_nm_1_q_bridgerton" target="_blank">
+        <div class="card" id="serie6">
+            <div class="poster">
+                <img src="{% static 'Caratulas/LosBridgerton.jpg' %}"/>
+            </div>
+            <div class="details">
+                <img src="https://occ-0-2794-2219.1.nflxso.net/dnm/api/v6/tx1O544a9T7n8Z_G12qaboulQQE/AAAABbuDVN4ugcuT6_EQ_f9Z_jpJiD-ys_MdBrD5QorT5FJ0ty1HcPJCE8CneJSIXaPxvcX0S0_iltvnwDnQUbOcWwshDUd1w5WtRtPjr7_fhaI9k8gpux0fXrvvOPuNfiP8ySEfKOrqUewTMTKdS2H6Jjb-UTIOlQjHnf-J0tq7Wc2TsrNjQKjCJA.png?r=ebc" class="logo"/>
+                <br><br><h3>Directed By Shonda Lynn Rhimes</h3><br><br>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <span>1/5</span>
+                </div>
+                <br>
+                <div class="tags">
+                    <span>Drama</span>
+                    <span>Romance</span>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Pelicula 7-->
+    <a href="https://www.imdb.com/title/tt2442560/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_peaky" target="_blank">
+        <div class="card" id="serie7">
+            <div class="poster">
+                <img src="{% static 'Caratulas/PeakyBlinders.jpg' %}"/>
+            </div>
+            <div class="details">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Peaky_Blinders_logo.png" class="logo"/>
+                <br><br><h3>Directed By Otto Bathurst</h3><br><br>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <span>4/5</span>
+                </div>
+                <br>
+                <div class="tags">
+                    <span>Action</span>
+                    <span>Drama</span>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Pelicula 8-->
+    <a href="https://www.imdb.com/title/tt7767422/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_sex%2520edu" target="_blank">
+        <div class="card" id="serie8">
+            <div class="poster">
+                <img src="{% static 'Caratulas/SexEducation.jpg' %}"/>
+            </div>
+            <div class="details">
+                <img src="https://occ-0-2794-2219.1.nflxso.net/dnm/api/v6/tx1O544a9T7n8Z_G12qaboulQQE/AAAABR6eys2UoPMGnLpPkNwHRUkTxmKtCnK4twzRuGn7UPitmOaJWiruiQ_8YXjcI4c8fO02XKa8kAR-TyLkbkWfQASlJYdPG9k6Y_RkUs3cyiz9-MNfPytj1346wnEilazbMY6_AOQwaH4l1Wm3v8XEoLOdTOybYEVvzNT5KijFPsrJ3p7t45yC8A.png?r=d88" class="logo"/>
+                <br><br><h3>Directed By Alistair Petrie</h3><br><br>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <span>4/5</span>
+                </div>
+                <br>
+                <div class="tags">
+                    <span>Comedia</span>
+                    <span>Drama</span>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Pelicula 9-->
+    <a href="https://www.imdb.com/title/tt1586680/?ref_=nv_sr_srsg_0_tt_7_nm_1_q_shameles" target="_blank">
+        <div class="card" id="serie9">
+            <div class="poster">
+                <img src="{% static 'Caratulas/Shameless.jpg' %}"/>
+            </div>
+            <div class="details">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Shameless_title.png" class="logo"/>
+                <br><br><h3>Directed By Mark Mylod</h3><br><br>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <span>4/5</span>
+                </div>
+                <br>
+                <div class="tags">
+                    <span>Comedia</span>
+                    <span>Drama</span>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Pelicula 10-->
+    <a href="https://www.imdb.com/title/tt1755893/?ref_=nv_sr_srsg_3_tt_7_nm_1_q_skins" target="_blank">
+        <div class="card" id="serie10">
+            <div class="poster">
+                <img src="{% static 'Caratulas/Skins.jpg' %}"/>
+            </div>
+            <div class="details">
+                <img src="https://occ-0-2794-2219.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABXjstxK6NmgTNSCp0ZSltuCx4EQWANOQxSTO1iT8ZdZ_IOcitt4tCk-TDhKgpuyM05WR_YJ9lu1EdJL1JIENgK9gYkoBZeCnW2VDYoo0hh--.png?r=467" class="logo"/>
+                <br><br><h3>Directed By Scott Smith</h3><br><br>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <span>4/5</span>
+                </div>
+                <br>
+                <div class="tags">
+                    <span>Comedia</span>
+                    <span>Drama</span>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Pelicula 11-->
+    <a href="https://www.imdb.com/title/tt5834204/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_el%2520cuento" target="_blank">
+        <div class="card" id="serie11">
+            <div class="poster">
+                <img src="{% static 'Caratulas/ElCuentoDeLaCriada.jpg' %}"/>
+            </div>
+            <div class="details">
+                <img src="https://1.bp.blogspot.com/-X6a3a58-YEs/XFzhWK0fbYI/AAAAAAAAbFQ/Go4duwDsg-sFGJY4n28LSZGg4fkdTBHBwCLcBGAs/s1600/Logo%2BBranca.png" class="logo"/>
+                <h3>Directed By Volker Schlondorff</h3><br><br>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <span>4/5</span>
+                </div>
+                <br>
+                <div class="tags">
+                    <span>Tragedia</span>
+                    <span>Drama</span>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Pelicula 12-->
+    <a href="https://www.imdb.com/title/tt9174558/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_dopes" target="_blank">
+        <div class="card" id="serie12">
+            <div class="poster">
+                <img src="{% static 'Caratulas/Dopesick.jpg' %}"/>
+            </div>
+            <div class="details">
+                <img src="https://assets.fanart.tv/fanart/tv/390716/hdtvlogo/dopesick-618e225a63878.png" class="logo"/>
+                <h3>Directed By Barry Levinson</h3><br><br>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <span>4/5</span>
+                </div>
+                <br>
+                <div class="tags">
+                    <span>Drama</span>
+                    <span>Thriller</span>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Pelicula 13-->
+    <a href="https://www.imdb.com/title/tt0413573/?ref_=nv_sr_srsg_2_tt_1_nm_5_q_gre" target="_blank">
+        <div class="card" id="serie13">
+            <div class="poster">
+                <img src="{% static 'Caratulas/GreysAnatomy.jpg' %}"/>
+            </div>
+            <div class="details">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Grey%27s_Anatomy_Logo.svg/1280px-Grey%27s_Anatomy_Logo.svg.png" class="logo"/>
+                <br><br><h3>Directed By Shonda Rhimes</h3><br><br>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <span>4/5</span>
+                </div>
+                <br>
+                <div class="tags">
+                    <span>Drama</span>
+                    <span>Comedia</span>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Pelicula 14-->
+    <a href="https://www.imdb.com/title/tt8880894/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_como%2520vivi" target="_blank">
+        <div class="card" id="serie14">
+            <div class="poster">
+                <img src="{% static 'Caratulas/ComoVivirContigoMismo.jpg' %}"/>
+            </div>
+            <div class="details">
+                <img src="https://occ-0-2794-2219.1.nflxso.net/dnm/api/v6/tx1O544a9T7n8Z_G12qaboulQQE/AAAABTuqUq7NoKq9YjFxtj4cKTN3PX1xsZNwXExmP8Bm2BHsjxzVKcCABc65crCvMZLG6UGlUqRMm4Uy4FfhzE5RK0Uir64JrldrSUOoOAmbiRohl1ZLdhv7ELxzbeCvn4iYk2DltVUKX-uv5l-iMSz9v-lLwGqwlRkOsBkykeux6E9zoI0lP4BU4Q.png?r=b24" class="logo"/>
+                <br><br><h3>Directed By Jonathan Dayton</h3><br><br>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <span>4/5</span>
+                </div>
+                <br>
+                <div class="tags">
+                    <span>Comedia</span>
+                    <span>Drama</span>
+                </div>
+            </div>
+        </div>
+    </a>
+</body>
+</html>

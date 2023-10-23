@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    {% load static %}
+    <link href="{% static 'css/aboutme.css' %}" rel="stylesheet" />
+</head>
+<body>
+    <style>
+        body {
+            background-image: url('https://4kwallpapers.com/images/walls/thumbs_3t/3292.jpg');
+            background-size: cover;
+        }
+    </style>
+    <section class="box" id="box1" style="width: 500px;">
+        <img src="https://storage.prompt-hunt.workers.dev/clhksnqr40001ld09jiuaesn8_1" width="180" alt="" class="box-img">
+        <h1>Sergio</h1>
+        <h2>Web Developer</h2>
+        <p>¡Hola! Soy un apasionado programador junior con experiencia en el desarrollo web utilizando Django, Python, HTML y CSS.            
+            <br><br>
+            Experiencia en Django
+            <br>
+            Durante mi tiempo como programador junior, he trabajado en proyectos utilizando el framework Django.
+            <br><br>
+            Conocimientos en Python
+            <br>
+            Además de Django, tengo conocimientos en Python, el lenguaje de programación utilizado en el desarrollo de aplicaciones web con Django.
+            <br><br>
+            HTML y CSS
+            <br>
+            También tengo experiencia en HTML y CSS, los lenguajes fundamentales para construir y diseñar sitios web.
+            <br><br>
+            Estoy constantemente aprendiendo y mejorando mis habilidades como programador. Siempre estoy emocionado de enfrentar nuevos desafíos y oportunidades para crecer profesionalmente.
+            Si estás buscando un programador junior con conocimientos en Django, Python, HTML y CSS, ¡no dudes en contactarme!
+            ¡Espero tener la oportunidad de trabajar contigo y contribuir a tus proyectos!
+        </p>
+        <ul>
+            <li><a href="{% url 'Error404' %}"><i class="fa-brands fa-github"></i></a></li>
+            <li><a href="{% url 'Error404' %}"><i class="fa-brands fa-linkedin"></i></a></li>
+            <li><a href="{% url 'Error404' %}"><i class="fa-brands fa-telegram"></i></a></li>
+        </ul>
+    </section>
+</body>
+</html>

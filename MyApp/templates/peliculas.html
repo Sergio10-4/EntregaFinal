@@ -1,0 +1,114 @@
+
+{% extends 'herencia.html' %}
+
+{% block contenido %}
+<head>
+    <title>Añadir Peliculas</title>   
+</head>
+
+    <style>
+        /* Estilos para el contenido del formulario */
+
+        .background {
+            background: rgba(0, 0, 0, 0.5) url("https://moewalls.com/wp-content/uploads/2023/04/retro-lofi-movie-night-at-boxbuster-thumb.jpg") no-repeat;
+            background-size: cover;
+            height: 100%;
+            width: 100%;
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(rgba(0, 123, 178, 0.5), rgba(13, 20, 35, 0.5));
+            background-size: cover;
+            height: 100%;
+            width: 100%;
+            border-radius: 5px;
+            z-index: 1;
+        }
+
+        .form-container h3 {
+            text-align: center;
+        }
+
+        .form-container p {
+            text-align: center;
+        }
+
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-container form input,
+        .form-container form textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-container form button {
+            padding: 10px;
+            background: linear-gradient(#007bb2, #0d1423);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-container .tags-dropdown {
+            position: relative;
+        }
+
+        .form-container .tags-dropdown .tags-list {
+            display: none;
+            position: absolute;
+            top: calc(100% + 5px);
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-container .tags-dropdown:hover .tags-list {
+            display: block;
+        }
+
+        .form-container .tags-dropdown .tags-list ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .form-container .tags-dropdown .tags-list ul li {
+            margin-bottom: 5px;
+        }
+
+        /* Estilos para hacer el diseño responsivo */
+        @media (max-width: 800px) {
+            .form-container {
+                max-width: 100%;
+                margin: 0;
+                border-radius: 0;
+            }
+        }
+    </style>
+    <div class="background">
+        <div class="form-container">
+            <h3>Peliculas</h3>
+            <p>En Esta Seccion Podras Agregar & Registrar Nuevas Peliculas Para Futuras Transmisiones De Cine</p>
+
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+{% endblock contenido %}

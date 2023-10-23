@@ -1,0 +1,26 @@
+.navbar.navbar-light.bg-light.static-top {
+    background: linear-gradient(#007bb2, #0d1423);
+}
+
+.navbar-brand {
+    color: #ffffff;
+}
+
+.btn.btn-primary {
+    background: linear-gradient(#57a9cf, #182746);
+    border: 0;
+}
+
+.center {
+    text-align: center;
+    align-items: center;
+    background:#007bb2;
+    border: 2px solid #182746;
+}
+
+.formulario-series {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

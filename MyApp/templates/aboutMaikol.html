@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    {% load static %}
+    <link href="{% static 'css/aboutme.css' %}" rel="stylesheet" />
+</head>
+<body>
+    <style>
+        body {
+            background-image: url('https://media.istockphoto.com/id/1413990965/photo/glowing-python-programming-language-code-on-a-blue-digital-surface-with-a-sphere-grid-design.webp?b=1&s=170667a&w=0&k=20&c=Mcir7vC75iWlMwltmAMIdT4n5cA6cDJ8shaTLSDcLDc=');
+            background-size: cover;
+        }
+    </style>
+    <section class="box" id="box1" style="width: 500px;">
+        <img src="https://images.saymedia-content.com/.image/c_limit%2Ccs_srgb%2Cq_auto:eco%2Cw_700/MTk3MDg5MjU5NDA3MDI1MjM1/rubik-cube-algorithms.webp" width="180" alt="" class="box-img">
+        <h1>Maikol</h1>
+        <h2>Web Developer</h2>
+        <p>Hola, me llamo Maikol            
+            <br><br>
+            Soy un apasionado estudiante de Python hace un año
+            <br>
+            Me gusta incursionar en nuevas cosas, y soy muy autodidacta, por lo que soy capaz de aprender muchas cosas por mi mismo
+            <br>
+            Tengo conocimientos en HTML, CSS, SQL, y un poquito de conocimiento en Javascript
+            <br><br>
+            Estoy constantemente aprendiendo y mejorando mis habilidades como programador. Siempre estoy emocionado de enfrentar nuevos desafíos y oportunidades para crecer profesionalmente.
+            Si estás buscando un programador junior con conocimientos en Django, Python, HTML y CSS, ¡no dudes en contactarme!
+            ¡Espero tener la oportunidad de trabajar contigo y contribuir a tus proyectos!
+        </p>
+        <ul>
+            <li><a href="{% url 'Error404' %}"><i class="fa-brands fa-github"></i></a></li>
+            <li><a href="{% url 'Error404' %}"><i class="fa-brands fa-linkedin"></i></a></li>
+            <li><a href="{% url 'Error404' %}"><i class="fa-brands fa-telegram"></i></a></li>
+        </ul>
+    </section>
+</body>
+</html>
+

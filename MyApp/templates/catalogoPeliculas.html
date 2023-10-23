@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogo De Peliculas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    {% load static %}
+    <link href="{% static 'css/peliCatalogos.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/nav.css' %}" rel="stylesheet" />
+</head>
+{% include 'busquedaPeliculas.html' %}
+<body>
+    <section>
+        <div>
+            <nav class="navbar navbar-light bg-light static-top">
+                <div class="container">
+                    <a class="navbar-brand" href="{% url 'main' %}">Home</a>
+                    {% if request.user.is_authenticated %}
+                        <a class="btn btn-primary" href="{% url 'perfil' %}">Perfil</a>
+                    {% else %}
+                        <a class="btn btn-primary" href="#">Registrate</a>
+                    {% endif %}
+                </div>
+            </nav>
+        </div>
+    </section>
+
+    <style>
+
+        section div .navbar.navbar-light.bg-light.static-top .container .navbar-brand {
+            position: absolute;
+            left: 10%;
+        }
+
+        section div .navbar.navbar-light.bg-light.static-top .container .btn.btn-primary{
+            position: absolute;
+            right: 10%;
+            color: white;
+            background-color: black;
+        }
+
+        .card .poster {
+            height: 100%;
+            opacity: 50%;
+        }
+
+        .card .details {
+            height: 100%;
+        }
+
+        .card .details .rating span {
+            color: yellow
+        }
+
+    </style>
+    <!-- Pelicula 1-->
+    <a href="https://www.imdb.com/title/tt0499549/?ref_=nv_sr_srsg_6_tt_8_nm_0_q_Avat" target="_blank">
+        <div class="card" id="pelicula1">
+            <div class="poster">
+                <img src="{% static 'Caratulas/Avatar1.jpg' %}"/>
+            </div>
+            <div class="details">
+                <img src="https://1000logos.net/wp-content/uploads/2022/11/Avatar-Font.png" class="logo"/>
+                <h3>Directed By James Cameron</h3><br><br>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <span>5/5</span>
+                </div>
+                <br>
+                <div class="tags">
+                    <span>Action</span>
+                    <span>Sci-Fi</span>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Pelicula 2-->
+    <a href="https://www.imdb.com/title/tt1630029/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_Avatar%25202" target="_blank">
+        <div class="card" id="pelicula2">
+            <div class="poster">
+                <img src="{% static 'Caratulas/Avatar2.jpg' %}"/>
+            </div>
+            <div class="details">
+                <img src="https://logos-world.net/wp-content/uploads/2023/04/Avatar-Logo.png" class="logo"/>
+                <h3>Directed By James Cameron</h3><br><br>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <span>4/5</span>
+                </div>
+                <br>
+                <div class="tags">
+                    <span>Action</span>
+                    <span>Sci-Fi</span>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Pelicula 3-->
+    <a href="https://www.imdb.com/title/tt15789038/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_Elemen" target="_blank">
+        <div class="card" id="pelicula3">
+            <div class="poster">
+                <img src="{% static 'Caratulas/Elemental.jpg' %}"/>
+            </div>
+            <div class="details">
+                <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1ebd221d-3581-4775-8f4c-086c377bc4c3/df7m3hk-578d73ec-d8f3-4673-bc8c-c7a070a8bfd3.png/v1/fill/w_1280,h_854/pixar_elemental_logo_png_by_docbuffflash82_df7m3hk-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9ODU0IiwicGF0aCI6IlwvZlwvMWViZDIyMWQtMzU4MS00Nzc1LThmNGMtMDg2YzM3N2JjNGMzXC9kZjdtM2hrLTU3OGQ3M2VjLWQ4ZjMtNDY3My1iYzhjLWM3YTA3MGE4YmZkMy5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.SGwwXpT1sCUKfKCDhLzdOw4j3h3zRrJMdVqB7bVyHXQ" class="logo"/>
+                <h3>Directed By Peter Sohn</h3><br><br>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <span>4/5</span>
+                </div>
+                <br>
+                <div class="tags">
+                    <span>Animation</span>
+                    <span>Comedy</span>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Pelicula 4-->
+    <a href="https://www.imdb.com/title/tt0816692/?ref_=nv_sr_srsg_7_tt_8_nm_0_q_Interes" target="_blank">
+        <div class="card" id="pelicula4">
+            <div class="poster">
+                <img src="{% static 'Caratulas/Interestelar.jpg' %}"/>
+            </div>
+            <div class="details">
+                <img src="https://occ-0-2794-2219.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABZNK4G2vjR8cm1iC3k8u9VX8vrcHZT2cut7Q5t1pyE7xOTTA5NuTl0STYFYPizJ0pLLsvywL4H2mA84hS9lDn5mo-Nxb4XHFesAnN7dv0gRg.png?r=777" class="logo"/>
+                <br><br><h3>Directed By Christopher Nolan</h3><br>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <span>5/5</span>
+                </div>
+                <br>
+                <div class="tags">
+                    <span>Sci-Fi</span>
+                    <span>Suspense</span>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Pelicula 5-->
+    <a href="https://www.imdb.com/title/tt2380307/?ref_=nv_sr_srsg_2_tt_2_nm_4_q_Coco" target="_blank">
+        <div class="card" id="pelicula5">
+            <div class="poster">
+                <img src="{% static 'Caratulas/Coco.jpg' %}"/>
+            </div>
+            <div class="details">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Disney%27s_Coco_logo.png" class="logo"/>
+                <br><br><h3>Directed By Adrián Molina</h3><br><br>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <span>5/5</span>
+                </div>
+                <br>
+                <div class="tags">
+                    <span>Animation</span>
+                    <span>Drama</span>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Pelicula 6-->
+    <a href="https://www.imdb.com/title/tt0848228/?ref_=nv_sr_srsg_3_tt_8_nm_0_q_Avengers" target="_blank">
+        <div class="card" id="pelicula6">
+            <div class="poster">
+                <img src="{% static 'Caratulas/Avengers1.jpg' %}"/>
+            </div>
+            <div class="details">
+                <img src="https://static.wikia.nocookie.net/logopedia/images/6/62/Marvel_avengers.png/revision/latest?cb=20210612020304&path-prefix=es" class="logo"/>
+                <br><br><br><h3>Directed By Joss Whedon</h3><br><br>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <span>4/5</span>
+                </div>
+                <br>
+                <div class="tags">
+                    <span>Action</span>
+                    <span>Sci-Fi</span>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Pelicula 7-->
+    <a href="https://www.imdb.com/title/tt0351283/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_Madag" target="_blank">
+        <div class="card" id="pelicula7">
+            <div class="poster">
+                <img src="{% static 'Caratulas/Madagascar1.jpg' %}"/>
+            </div>
+            <div class="details">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Madagascar_logo.png/799px-Madagascar_logo.png" class="logo"/>
+                <br><br><h3>Directed By Tom McGrath</h3><br><br>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <span>4/5</span>
+                </div>
+                <br>
+                <div class="tags">
+                    <span>Animation</span>
+                    <span>Comedy</span>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Pelicula 8-->
+    <a href="https://www.imdb.com/title/tt0317219/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_Cars" target="_blank">
+        <div class="card" id="pelicula8">
+            <div class="poster">
+                <img src="{% static 'Caratulas/Cars1.jpg' %}"/>
+            </div>
+            <div class="details">
+                <img src="https://i.pinimg.com/originals/8c/6e/18/8c6e185a52833827da775bf3892c2e26.png" class="logo"/>
+                <h3>Directed By John Lasseter</h3><br><br>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <span>4/5</span>
+                </div>
+                <br>
+                <div class="tags">
+                    <span>Animation</span>
+                    <span>Comedy</span>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Pelicula 9-->
+    <a href="https://www.imdb.com/title/tt0126029/?ref_=nv_sr_srsg_0_tt_5_nm_3_q_Shre" target="_blank">
+        <div class="card" id="pelicula9">
+            <div class="poster">
+                <img src="{% static 'Caratulas/Shrek1.jpg' %}"/>
+            </div>
+            <div class="details">
+                <img src="https://image.tmdb.org/t/p/original/aHdDXMXOAgejOVoupZBULvcfcQG.png" class="logo"/>
+                <br><br><h3>Directed By Andrew Adamson</h3><br>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <span>4/5</span>
+                </div>
+                <br>
+                <div class="tags">
+                    <span>Animation</span>
+                    <span>Comedy</span>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Pelicula 10-->
+    <a href="https://www.imdb.com/title/tt0413267/?ref_=nv_sr_srsg_6_tt_7_nm_1_q_Shrek" target="_blank">
+        <div class="card" id="pelicula10">
+            <div class="poster">
+                <img src="{% static 'Caratulas/Shrek3.jpg' %}"/>
+            </div>
+            <div class="details">
+                <img src="https://static.wikia.nocookie.net/logopedia/images/1/11/Shrek-the-third-4ff5f831c5cad.png/revision/latest?cb=20180426223750" class="logo"/>
+                <br><br><h3>Directed By Chris Miller</h3><br><br>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <span>4/5</span>
+                </div>
+                <br>
+                <div class="tags">
+                    <span>Animation</span>
+                    <span>Comedy</span>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Pelicula 11-->
+    <a href="https://www.imdb.com/title/tt10640346/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_Babylo" target="_blank">
+        <div class="card" id="pelicula11">
+            <div class="poster">
+                <img src="{% static 'Caratulas/Babylon.jpg' %}"/>
+            </div>
+            <div class="details">
+                <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/e/e8/Babylon_%28film%2C_2022%29.png/640px-Babylon_%28film%2C_2022%29.png" class="logo"/>
+                <br><br><h3>Directed By Damien Chazelle</h3><br><br>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <span>4/5</span>
+                </div>
+                <br>
+                <div class="tags">
+                    <span>Drama</span>
+                    <span>Comedy</span>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Pelicula 12-->
+    <a href="https://www.imdb.com/title/tt0195714/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_Destino%2520Final" target="_blank">
+        <div class="card" id="pelicula12">
+            <div class="poster">
+                <img src="{% static 'Caratulas/DestinoFinal1.jpg' %}"/>
+            </div>
+            <div class="details">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Final_Destination_1_Logo.png" class="logo"/>
+                <br><br><br><br><h3>Directed By James Wong</h3><br><br>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <span>4/5</span>
+                </div>
+                <br>
+                <div class="tags">
+                    <span>Horror</span>
+                    <span>Thriller</span>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Pelicula 13-->
+    <a href="https://www.imdb.com/title/tt0114709/?ref_=nv_sr_srsg_1_tt_7_nm_0_q_Toy%2520st" target="_blank">
+        <div class="card" id="pelicula13">
+            <div class="poster">
+                <img src="{% static 'Caratulas/ToyStory1.jpg' %}"/>
+            </div>
+            <div class="details">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Toy_Story.svg" class="logo"/>
+                <h3>Directed By John Lasseter</h3><br><br>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <span>4/5</span>
+                </div>
+                <br>
+                <div class="tags">
+                    <span>Animation</span>
+                    <span>Comedy</span>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Pelicula 14-->
+    <a href="https://www.imdb.com/title/tt0266543/?ref_=nv_sr_srsg_1_tt_8_nm_0_q_Buscando" target="_blank">
+        <div class="card" id="pelicula14">
+            <div class="poster">
+                <img src="{% static 'Caratulas/BuscandoANemo.jpg' %}"/>
+            </div>
+            <div class="details">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Logo_de_Buscando_a_Nemo.svg" class="logo"/>
+                <br><br><h3>Directed By Andrew Stanton</h3><br><br>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <span>4/5</span>
+                </div>
+                <br>
+                <div class="tags">
+                    <span>Animation</span>
+                    <span>Comedy</span>
+                </div>
+            </div>
+        </div>
+    </a>
+</body>
+</html>

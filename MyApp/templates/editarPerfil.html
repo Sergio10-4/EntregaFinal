@@ -1,0 +1,120 @@
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualizar Perfil</title>
+</head>
+<body>
+    <div class="parallax-contenedor">
+    </div>
+    <style>
+
+        body {
+            height: 100vh;
+            width: 90%;
+            background: url("https://bigthink.com/wp-content/uploads/2023/05/pannekoek-1928-inverse_Web.jpg") no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        /* Estilos para el contenido del formulario */
+
+        .form-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            top: 5%;
+            bottom: 20%;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(rgba(0, 123, 178, 0.5), rgba(13, 20, 35, 0.5));
+            background-size: cover;
+            height: 90%;
+            width: 100%;
+            border-radius: 5px;
+            z-index: 20000;
+        }
+
+        .form-container h3 {
+            text-align: center;
+        }
+
+        .form-container p {
+            text-align: center;
+        }
+
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-container form input,
+        .form-container form textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-container form button {
+            padding: 10px;
+            background: linear-gradient(#007bb2, #0d1423);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-container .tags-dropdown {
+            position: relative;
+        }
+
+        .form-container .tags-dropdown .tags-list {
+            display: none;
+            position: absolute;
+            top: calc(100% + 5px);
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-container .tags-dropdown:hover .tags-list {
+            display: block;
+        }
+
+        .form-container .tags-dropdown .tags-list ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .form-container .tags-dropdown .tags-list ul li {
+            margin-bottom: 5px;
+        }
+
+        /* Estilos para hacer el diseño responsivo */
+        @media (max-width: 800px) {
+            .form-container {
+                max-width: 100%;
+                margin: 0;
+                border-radius: 0;
+            }
+        }
+    </style>
+    <div class="form-container">
+        <h3>Actualizar Datos</h3>
+        <p>En esta Seccion Podras Actualizar Tus Datos</p>
+        <form method="post" action="{% url 'ActualizarPerfil' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Actualizar Datos</button>
+        </form>
+    </div>
+</body>
+</html>

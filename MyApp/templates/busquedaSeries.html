@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css'>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/busqueda.css' %}">
+</head>
+<body>
+
+    <form class="search" method="GET" action="{% url 'buscarserie' %}">
+        <input type="text" name="query" placeholder="Buscar Serie" class="search__input"/>
+        <button type="button" class="search__button" onclick="submitFormSerie()">
+            <i class="ri-search-2-line"></i>
+        </button>
+    </form>
+
+    <script>
+        function submitFormSerie() {
+            document.getElementsByClassName('search')[0].submit();
+        }
+    </script>
+    
+</body>
+</html>

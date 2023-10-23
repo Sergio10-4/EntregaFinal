@@ -1,0 +1,309 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(#007bb2, #0d1423);
+}
+
+.card {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.card .poster {
+    position: relative;
+    overflow: hidden;
+}
+
+.card .poster::before {
+    content: '';
+    position: absolute;
+    bottom: -180px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, #1064a6, 50%, transparent);
+    transition: 0.5s;
+    z-index: 1;
+}
+
+.card:hover .poster::before {
+    bottom: 0px;
+}
+
+.card .poster img {
+    width: 100%;
+    transition: 0.5s;
+}
+
+.card:hover .poster img {
+    transform: translateY(-50px);
+    filter: blur(5px);
+}
+
+.card .details {
+    position: absolute;
+    bottom: -170px;
+    left: 0;
+    padding: 20px;
+    width: 100%;
+    z-index: 2;
+    transition: 0.5s;
+}
+
+.card:hover .details {
+    bottom: 0px;
+}
+
+.card .details .logo {
+    max-width: 120px;
+}
+
+.card .details h3 {
+    font-size: 0.8em;
+    color: #fff;
+}
+
+.card .details .rating {
+    position: relative;
+    padding: 5px 0;
+}
+
+.card .details .rating .fa-star {
+    color: #f7f406;
+    font-size: 1em;
+}
+
+.card .details .rating span {
+    color: #fff;
+    margin-left: 5px;
+}
+
+.card .details .tags {
+    position: relative;
+    margin-top: 5px;
+}
+
+.card .details .tags span {
+    padding: 2px 5px;
+    color: #fff;
+    background: #03a8f5;
+    border-radius: 4px;   
+}
+
+.card .details .tags span:nth-child(1) {
+    background: #03a8f5;
+}
+
+.card .details .tags span:nth-child(2) {
+    background: #ff5722;
+}
+
+.card .details .tags span:nth-child(3) {
+    background: #03a8f5;
+}
+
+.card .details .tags span:nth-child(4) {
+    background: #ff5722;
+}
+
+.card .details .info {
+    color: #fff;
+    margin-top: 20px;
+    font-size: 0.7em;
+}
+
+.card .details .cast {
+    position: relative;
+}
+
+.card .details .cast h4 {
+    color: #fff;
+    margin-top: 10px;
+}
+
+.card .details .cast ul {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.card .details .cast ul li {
+    list-style: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #fff;
+}
+
+.card .details .cast ul li img {
+    max-width: 100%;
+}
+
+#serie1 {
+    position: absolute;
+    top: 80px;
+    left: 10px;
+}
+
+
+#serie2 {
+    position: absolute;
+    top: 80px;
+    left: 220px;
+}
+
+#serie2 .details .info {
+    color: #fff;
+    margin-top: 20px;
+    font-size: 0.6em;
+}
+
+#serie3 {
+    position: absolute;
+    top: 80px;
+    left: 430px;
+}
+
+#serie3 .details .info {
+    color: #fff;
+    margin-top: 20px;
+    font-size: 0.5em;
+}
+
+#serie4 {
+    position: absolute;
+    top: 80px;
+    left: 640px;
+}
+
+#serie4 .details .info {
+    color: #fff;
+    margin-top: 20px;
+    font-size: 0.5em;
+}
+
+#serie5 {
+    position: absolute;
+    top: 80px;
+    left: 850px;
+}
+
+#serie5 .details .info {
+    color: #fff;
+    margin-top: 20px;
+    font-size: 0.6em;
+}
+
+#serie6 {
+    position: absolute;
+    top: 80px;
+    left: 1060px;
+}
+
+#serie6 .details .info {
+    color: #fff;
+    margin-top: 20px;
+    font-size: 0.6em;
+}
+
+#serie7 {
+    position: absolute;
+    top: 80px;
+    left: 1270px;
+}
+
+#serie7 .details .info {
+    color: #fff;
+    margin-top: 20px;
+    font-size: 0.6em;
+}
+
+#serie8 {
+    position: absolute;
+    top: 400px;
+    left: 10px;
+}
+
+#serie8 .details .info {
+    color: #fff;
+    margin-top: 20px;
+    font-size: 0.6em;
+}
+
+#serie9 {
+    position: absolute;
+    top: 400px;
+    left: 220px;
+}
+
+#serie9 .details .info {
+    color: #fff;
+    margin-top: 20px;
+    font-size: 9px;
+}
+
+
+#serie10 {
+    position: absolute;
+    top: 400px;
+    left: 430px;
+}
+
+#serie10 .details .info {
+    color: #fff;
+    margin-top: 20px;
+    font-size: 0.6em;
+}
+
+#serie11 {
+    position: absolute;
+    top: 400px;
+    left: 640px;
+}
+
+#serie11 .details .info {
+    color: #fff;
+    margin-top: 20px;
+    font-size: 10.5px;
+}
+
+#serie12 {
+    position: absolute;
+    top: 400px;
+    left: 850px;
+}
+
+#serie13 {
+    position: absolute;
+    top: 400px;
+    left: 1060px;
+}
+
+#serie14 {
+    position: absolute;
+    top: 400px;
+    left: 1270px;
+}
+
+#serie14 .details .info {
+    color: #fff;
+    margin-top: 20px;
+    font-size: 0.5em;
+}
+

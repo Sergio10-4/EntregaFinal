@@ -1,0 +1,74 @@
+
+{% extends 'herencia.html' %}
+
+{% block contenido %}
+    {% load static %}
+    <link href="{% static 'templates/stylee.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/nav.css' %}" rel="stylesheet" />
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css'>
+    <body>
+
+        <style>
+
+            body {
+                background-color: #006999;
+            }
+
+            .parrafo1{
+                position: absolute;
+                top: 140%;
+                left: 30%;
+                transform: translate(-50%, -50%);
+            }
+            .parrafo2{
+                position: absolute;
+                top: 200%;
+                left: 72%;
+                transform: translate(-50%, -50%);
+            }
+            body .imagen1 img{
+                position: absolute;
+                top: 130%;
+                left: 80%;
+                transform: translate(-50%, -50%);
+                height: 350px;
+                width: 600px;
+            }
+            body .imagen2 img{
+                position: absolute;
+                top: 205%;
+                left: 30%;
+                transform: translate(-50%, -50%);
+                height: 400px;
+                width: 700px;
+            }
+        </style>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br>
+        <div class="parrafo1">
+            <h3 style="color: white;">Plataformas De Streaming</h3>
+            <br>
+            <p style="color: white;">Tendras un acceso directo a las plataformas principales de streaming del mundo,
+                <br>podras comenzar tu membresia de manera rapida y efectiva mediante las redirecciones de cinemania
+                <br>Disfruta de los mejores titulos del momento y luego ven a dejarnos una reseña de tu favorito.
+                <br>Todos necesitamos un momento de diversion, comienza el tuyo!
+                <br>Esperamos que tu instancia en nuestra pagina sea lo mas grata posible y gracias por visitarnos!.
+            </p>
+        </div>
+        <div class="parrafo2">
+            <h3 style="color: white;">Plataformas De Valoraciones Y Reseñas</h3>
+            <br>
+            <p style="color: white;">Mediante esta pagina podras acceder a las plataformas principales de reseñas y valoraciones
+                <br>de todas las peliculas y series que hayas visto, proximos estrenos y mas.
+                <br>Todo al alcance de un clic!.
+            </p>
+        </div>
+        <div class="imagen1">
+            <br>
+            <img src="{% static 'PNG/Distribuidoras.png' %}">
+        </div>
+        <div class="imagen2">
+            <li><img src="{% static 'PNG/Reseñas.png' %}"></li>
+        </div>     
+    </body>
+{% endblock contenido %}

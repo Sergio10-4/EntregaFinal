@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reseñas</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/Reviews.css' %}">
+</head>
+<body style="background: linear-gradient(#007bb2, #0d1423);">
+
+    <div class="container">
+        <h1>Reseñas de Películas y Series</h1>
+        <br><br><br>
+
+        <div class="series">
+            <h2>Series</h2>
+            {% for serie in series %}
+                <div class="serie">
+                    <h3>{{ serie.nombre }}</h3>
+                    <p>{{ serie.reseña }}</p>
+                    <br><br>
+                    <button><a href="{{ serie.valoracion }}" target="_blank">Ver Valoracion</a></button>
+                </div>
+            {% endfor %}
+        </div>
+
+        <br><br><br>
+
+        <div class="peliculas">
+            <h2 style="display: flexbox; align-items: center; justify-content: center;">Películas</h2>
+            {% for pelicula in peliculas %}
+                <div class="pelicula">
+                    <h3>{{ pelicula.nombre }}</h3>
+                    <p>{{ pelicula.reseña }}</p>
+                    <br><br>
+                    <button><a href="{{ pelicula.valoracion }}" target="_blank">Ver Valoracion</a></button>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</body>
+</html>

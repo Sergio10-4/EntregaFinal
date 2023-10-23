@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogo De Productoras</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    {% load static %}
+    <link href="{% static 'css/productoraCatalogos.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/nav.css' %}" rel="stylesheet" />
+</head>
+{% include 'busquedaProductoras.html' %}
+<body>
+    <section>
+        <div>
+            <nav class="navbar navbar-light bg-light static-top">
+                <div class="container">
+                    <a class="navbar-brand" href="{% url 'main' %}">Home</a>
+                    {% if request.user.is_authenticated %}
+                        <a class="btn btn-primary" href="{% url 'perfil' %}">Perfil</a>
+                    {% else %}
+                        <a class="btn btn-primary" href="#">Registrate</a>
+                    {% endif %}
+                </div>
+            </nav>
+        </div>
+    </section>
+    <style>
+
+        section div .navbar.navbar-light.bg-light.static-top .container .navbar-brand {
+            position: absolute;
+            left: 10%;
+        }
+
+        section div .navbar.navbar-light.bg-light.static-top .container .btn.btn-primary{
+            position: absolute;
+            right: 10%;
+            color: white;
+            background-color: black;
+        }
+
+        .card {
+            height: 200px;
+        }
+
+        .card .poster {
+            height: 100%;
+            opacity: 50%;
+        }
+
+        .card .details {
+            height: 110%;
+        }
+    </style>
+        
+    <!-- Pelicula 1-->
+    <a href="https://www.filmaffinity.com/es/name.php?name-id=666784240" target="_blank">
+        <div class="card" id="productora1">
+            <div class="poster">
+                <img src="{% static 'Productoras/Marvel.jpg' %}"/>
+            </div>
+            <div class="details">
+                <h3>Marvel Studios</h3>
+                <div class="info">
+                    <p>Es una franquicia de medios y un universo compartido, centrada en una serie de películas de superhéroes producidas por Marvel Studios.</p><br><br><br><br><br><br><br><br><br><br><br><br>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Pelicula 2-->
+    <a href="https://www.filmaffinity.com/es/name.php?name-id=459614581" target="_blank">
+        <div class="card" id="productora2">
+            <div class="poster">
+                <img src="{% static 'Productoras/BBCStudios.jpg' %}"/>
+            </div>
+            <div class="details">
+                <h3>BBC Studios</h3>
+                <div class="info">
+                    <p>Es una productora de contenidos británica y es la división de producción nacional de BBC Studios, que produce una amplia gama de programas.</p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Pelicula 3-->
+    <a href="https://www.filmaffinity.com/es/name.php?name-id=504273057" target="_blank">
+        <div class="card" id="productora3">
+            <div class="poster">
+                <img src="{% static 'Productoras/DreamWorks.jpg' %}"/>
+            </div>
+            <div class="details">
+                <h3>DreamWorks Pictures</h3>
+                <div class="info">
+                    <p>Es una productora audiovisual estadounidense, fundada en 1994 por Steven Spielberg, Jeffrey Katzenberg y David Geffen, con sede en la ciudad de Glendale, California.</p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Pelicula 4-->
+    <a href="https://www.filmaffinity.com/es/name.php?name-id=547719814" target="_blank">
+        <div class="card" id="productora4">
+            <div class="poster">
+                <img src="{% static 'Productoras/NewLineCinema.jpg' %}"/>
+            </div>
+            <div class="details">
+                <h3>New Line Cinema</h3>
+                <div class="info">
+                    <p>Es un estudio estadounidense de producción cinematográfica filial de Warner Bros. Entertainment.Fue fundado en 1967 por Robert Shaye como una compañía de distribución de películas independiente, luego se convirtió en un estudio de cine.</p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Pelicula 5-->
+    <a href="https://www.filmaffinity.com/es/name.php?name-id=603919547" target="_blank">
+        <div class="card" id="productora5">
+            <div class="poster">
+                <img src="{% static 'Productoras/Paramount.jpg' %}"/>
+            </div>
+            <div class="details">
+                <h3>Paramount Pictures</h3>
+                <div class="info">
+                    <p>Es una empresa estadounidense de producción y distribución de cine y televisión y la división homónima de Paramount Global.</p><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Pelicula 6-->
+    <a href="https://www.filmaffinity.com/es/name.php?name-id=447434039" target="_blank">
+        <div class="card" id="productora6">
+            <div class="poster">
+                <img src="{% static 'Productoras/Pixar.jpg' %}"/>
+            </div>
+            <div class="details">
+                <h3>Pixar Studios</h3>
+                <div class="info">
+                    <p>Es un estudio cinematográfico de animación por computadora subsidario de Walt Disney Studios y propiedad de The Walt Disney Company con sede en Emeryville, Estados Unidos.​</p><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Pelicula 7-->
+    <a href="https://www.filmaffinity.com/es/name.php?name-id=241265159" target="_blank">
+        <div class="card" id="productora7">
+            <div class="poster">
+                <img src="{% static 'Productoras/WarnerBros.jpg' %}"/>
+            </div>
+            <div class="details">
+                <h3>Warner Bros</h3>
+                <div class="info">
+                    <p>Es un estudio de cine y entretenimiento estadounidense con sede en el complejo Warner Bros. Studios en Burbank, California, y una subsidiaria de Warner Bros. Discovery. Fundada en 1923 por cuatro hermanos, Harry, Albert, Sam y Jack L.</p><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Pelicula 8-->
+    <a href="https://www.filmaffinity.com/es/name.php?name-id=920964571" target="_blank">
+        <div class="card" id="productora8">
+            <div class="poster">
+                <img src="{% static 'Productoras/WiedemanStudios.jpg' %}"/>
+            </div>
+            <div class="details">
+                <h3>Wiedemann Studios</h3>
+                <div class="info">
+                    <p>Es una productora cinematográfica alemana fundada por Quirin Berg y Max Wiedemann en 2003. La primera película de la compañía, La vida de los demás [1], ganó el Premio de la Academia a la mejor película en lengua extranjera en 2007.</p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Pelicula 9-->
+    <a href="https://www.filmaffinity.com/es/name.php?name-id=491394776" target="_blank">
+        <div class="card" id="productora9">
+            <div class="poster">
+                <img src="{% static 'Productoras/Shondaland.jpg' %}"/>
+            </div>
+            <div class="details">
+                <h3>Shondaland</h3>
+                <div class="info">
+                    <p><h7>Es una compañía de producción estadounidense fundada por Shonda Rhimes.​ Rhimes fundó la compañía para producir su primera serie de televisión, Grey's Anatomy.</h7></p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Pelicula 10-->
+    <a href="https://www.filmaffinity.com/es/name.php?name-id=130399205" target="_blank">
+        <div class="card" id="productora10">
+            <div class="poster">
+                <img src="{% static 'Productoras/SonyPictures.jpg' %}"/>
+            </div>
+            <div class="details">
+                <h3>Sony Pictures</h3>
+                <div class="info">
+                    <p>Es una distribuidora y productora cinematográfica estadounidense subsidiaria de Sony Corporation, un conglomerado de tecnología multinacional y medios de comunicación con sede en Japón.</p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Pelicula 11-->
+    <a href="https://www.filmaffinity.com/es/name.php?name-id=999066432" target="_blank">
+        <div class="card" id="productora11">
+            <div class="poster">
+                <img src="{% static 'Productoras/ElevenFilms.jpg' %}"/>
+            </div>
+            <div class="details">
+                <h3>Eleven Films</h3>
+                <div class="info">
+                    <p>Es una productora de televisión británica fundada por Jamie Campbell y Joel Wilson. Se formó en 2006 y fue la primera productora de drama en beneficiarse del Channel 4 Growth Fund.</p><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Pelicula 12-->
+    <a href="https://www.filmaffinity.com/es/name.php?name-id=414429784" target="_blank">
+        <div class="card" id="productora12">
+            <div class="poster">
+                <img src="{% static 'Productoras/A24.jpg' %}"/>
+            </div>
+            <div class="details">
+                <h3>A24 Films</h3>
+                <div class="info">
+                    <p>Es una empresa cinematográfica estadounidense fundada el 20 de agosto de 2012 por Daniel Katz, David Fenkel y John Hodges.3​ Está especializada en la producción y distribución de cine y televisión.</p><br><br><br><br><br><br><br><br><br><br><br>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Pelicula 13-->
+    <a href="https://www.filmaffinity.com/es/name.php?name-id=543945351" target="_blank">
+        <div class="card" id="productora13">
+            <div class="poster">
+                <img src="{% static 'Productoras/FocusFeatures.jpg' %}"/>
+            </div>
+            <div class="details">
+                <h3>Focus Features</h3>
+                <div class="info">
+                    <p>Es una productora de cine independiente propiedad de Comcast, así como una de sus filiales. También es, por tanto, la filial de Universal Pictures encargada de producir y distribuir gran parte de sus largometrajes de forma independiente.</p><br><br><br><br><br><br><br><br><br><br><br>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <!-- Pelicula 14-->
+    <a href="https://www.filmaffinity.com/es/name.php?name-id=788180080" target="_blank">
+        <div class="card" id="productora14">
+            <div class="poster">
+                <img src="{% static 'Productoras/HappyMadison.jpg' %}"/>
+            </div>
+            <div class="details">
+                <h3>Happy Madison</h3>
+                <div class="info">
+                    <p>Es una compañía estadounidense productora de películas y programas de televisión. Fue fundada por el actor y comediante Adam Sandler en 1999, es conocida por sus películas de comedia.</p><br><br><br><br><br><br><br><br><br><br><br>
+                </div>
+            </div>
+        </div>
+    </a>
+</body>
+</html>
