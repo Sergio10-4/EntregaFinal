@@ -19,6 +19,10 @@ class CustomUserUpdateForm(UserChangeForm):
         model = User
         fields = ['username', 'first_name', 'last_name', 'email']
 
+class PasswordChangeForm(PasswordChangeForm):
+    class Meta:
+        model = User
+
 
 class ProductoraForm(forms.ModelForm):
     class Meta:

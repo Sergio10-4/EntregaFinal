@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import logout, login, authenticate
-from MyApp.forms import CustomUserCreationForm, CustomUserUpdateForm, PeliculaForm, SerieForm, ProductoraForm, PeliculaResenaForm, SerieResenaForm
+from django.contrib.auth import logout, login, authenticate, update_session_auth_hash
+from MyApp.forms import CustomUserCreationForm, CustomUserUpdateForm, PeliculaForm, SerieForm, ProductoraForm, PeliculaResenaForm, SerieResenaForm, PasswordChangeForm
 from django.contrib import messages
 from MyApp.models import Productora, Pelicula, Serie, Tag
+from django.contrib.auth.models import User
 from django.views.generic.edit import UpdateView
 
 # Create your views here.
@@ -37,8 +38,18 @@ def base(request):
     return render(request, 'base.html')
 
 @login_required
-def products(request):
-    return render(request, 'productos.html')
+def PasswordChange(request):
+    user = request.user
+    if request.method == 'POST':
+        form = PasswordChangeForm(user, request.POST)
+        if form.is_valid():
+            user = form.save()
+            update_session_auth_hash(request, user)
+            messages.success(request, '¡Contraseña cambiada exitosamente!')
+            return redirect('perfil')
+    else:
+        form = PasswordChangeForm(user)
+    return render(request, 'CambiarContraseña.html', {'form': form})
 
 def main(request):
     return render(request, 'main.html')
@@ -123,43 +134,33 @@ def mostrar_reviews(request):
     return render(request, 'mostrarReseñas.html', {'series': series, 'peliculas': peliculas})
 
 
-def actualizar_review(request, pelicula_id):
-
+def Pelicula_reviewActualizar(request, pelicula_id):
+    pelicula = get_object_or_404(Pelicula, id=pelicula_id)
     if request.method == 'POST':
         tipo = request.POST.get('tipo')
         id = request.POST.get('id')
 
-        if tipo == 'pelicula':
+        if tipo == 'pelicula' and int(id) == pelicula_id:
             instancia = get_object_or_404(Pelicula, id=id)
             form = PeliculaResenaForm(request.POST, instance=instancia)
-    
-        elif tipo == 'serie':
-            instancia = get_object_or_404(Serie, id=id)
-            form = SerieResenaForm(request.POST, instance=instancia)
-    
+
+            if form.is_valid():
+                form.save()
+                messages.success(request, 'Reseñas Actualizada Exitosamente')
+                return redirect('perfil')
+            else:
+                messages.error(request, 'Error al actualizar la reseña de película')
         else:
-            messages.error(request, 'Dato Ingresado No Valido, Intentelo Denuevo')
-            return redirect('ListadeReseñas')
-
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'Reseñas Actualizada Exitosamente')
-            return redirect('perfil')
-
+            messages.error(request, 'Dato Ingresado NO Valido')
     else:
-        messages.error(request, 'Método no permitido')
-        return redirect('ListadeReseñas')
-
-    peliculas = Pelicula.objects.all()
-    series = Serie.objects.all()
+        messages.error(request, 'Metodo No Permitido')
     
     context = {
-        'series': series,
-        'peliculas': peliculas,
-        'messages': messages.get_messages(request),  # Agregar esto al contexto
+        'peliculas': [pelicula],
+        'messages': messages.get_messages(request),
     }
 
-    return render(request, 'mostrarReseñas.html', context)
+    return render(request, 'actualizarReseñaPelicula.html', context)
 
     
 def productoraCatalogo(request):

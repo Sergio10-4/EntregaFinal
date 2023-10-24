@@ -1,12 +1,12 @@
-{% load crispy_forms_tags %}
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actualizar Perfil</title>
+    <title>Cambiar Contraseña</title>
 </head>
 <body>
+
     <style>
 
         body {
@@ -38,10 +38,12 @@
 
         .form-container h3 {
             text-align: center;
+            color: white;
         }
 
         .form-container p {
             text-align: center;
+            color: white;
         }
 
         .form-container form {
@@ -68,6 +70,7 @@
 
         .form-container .tags-dropdown {
             position: relative;
+            color: white;
         }
 
         .form-container .tags-dropdown .tags-list {
@@ -80,6 +83,7 @@
             background-color: #fff;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            color: white;
         }
 
         .form-container .tags-dropdown:hover .tags-list {
@@ -90,10 +94,12 @@
             list-style: none;
             padding: 0;
             margin: 0;
+            color: white;
         }
 
         .form-container .tags-dropdown .tags-list ul li {
             margin-bottom: 5px;
+            color: white;
         }
 
         /* Estilos para hacer el diseño responsivo */
@@ -105,14 +111,21 @@
             }
         }
     </style>
+
     <div class="form-container">
-        <h3>Actualizar Datos</h3>
-        <p>En esta Seccion Podras Actualizar Tus Datos</p>
-        <form method="post" action="{% url 'ActualizarPerfil' %}" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Actualizar Datos</button>
-        </form>
+        <div style="display: flex; justify-content: space-between;">
+            <div class="container mt-5" style="width: 100%; margin: 20px;">
+                <div class="card p-4">
+                    <h2>Cambiar Contraseña</h2>
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit">Cambiar Contraseña</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
+    
 </body>
 </html>

@@ -42,5 +42,6 @@ urlpatterns = [
     path('sobre-sergio/', views.aboutSergio, name="AboutSergio"),
     path('sobre-maikol/', views.aboutMaikol, name="AboutMaikol"),
     path('actualizar-datos/', views.cambiarDatos, name="ActualizarPerfil"),
-    path('actualizar-reseña/<int:pelicula_id>/', views.actualizar_review, name="actualizar_review"),
+    path('password/', views.PasswordChange, name="cambiarContraseña"),
+    path('actualizar-reseña-pelicula/<int:pelicula_id>/', views.Pelicula_reviewActualizar, name="actualizar_reseña_pelicula"),
 ]

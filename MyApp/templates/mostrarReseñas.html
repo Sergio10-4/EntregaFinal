@@ -33,6 +33,13 @@
                 <div class="pelicula">
                     <h3>{{ pelicula.nombre }}</h3>
                     <p>{{ pelicula.reseña }}</p>
+                    <br>
+                    <form method="post" action="{% url 'actualizar_reseña_pelicula' pelicula.id %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="tipo" value="pelicula">
+                        <input type="hidden" name="id" value="{{ pelicula.id }}">
+                        {{ form.as_p }}
+                    </form>
                     <br><br>
                     <button><a href="{{ pelicula.valoracion }}" target="_blank">Ver Valoracion</a></button>
                 </div>
