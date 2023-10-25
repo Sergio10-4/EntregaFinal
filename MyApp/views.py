@@ -37,7 +37,6 @@ def cerrarSesion(request):
 def base(request):
     return render(request, 'base.html')
 
-@login_required
 def PasswordChange(request):
     user = request.user
     if request.method == 'POST':
